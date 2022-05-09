@@ -43,7 +43,7 @@ namespace eWireApi
                     },
                     License = new Microsoft.OpenApi.Models.OpenApiLicense
                     {
-                        Name = "Balendin Solutions Open License",
+                        Name = "eWire Solutions Open License",
                         Url = new Uri("https://balendinsolutions.com/")
                     }
                 });
