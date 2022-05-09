@@ -32,8 +32,8 @@ namespace eWireApi
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
                 {
                     Version = "V1",
-                    Title = " Balendin Rest API",
-                    Description = "Demos provided by Balendin SOlutions",
+                    Title = " eWire Rest API",
+                    Description = "api with restfull endpoints",
                     TermsOfService = new Uri("https://balendinsolutions.com/"),
                     Contact = new Microsoft.OpenApi.Models.OpenApiContact
                     {
