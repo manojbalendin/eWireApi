@@ -6,7 +6,7 @@ using System.Linq;
 using System.Data.SqlClient;
 using System;
 
-namespace TempleManagement_API.DAL
+namespace eWireApi.DAL
 {
     public class SQLDataAccess : IDisposable
     {
