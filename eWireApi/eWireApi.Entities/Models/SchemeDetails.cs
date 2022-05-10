@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace eWireApi.Entities.Models
+﻿namespace eWireApi.Entities.Models
 {
     public class SchemeDetails : ResponseBaseModel
     {
