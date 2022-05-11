@@ -1,3 +1,5 @@
+using eWireApi.DAL;
+using eWireApi.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,17 @@ namespace eWireApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
+            services.Scan(scan => scan
+                    .FromAssemblyOf<CustomerService>()
+                    .AddClasses(classes => classes.Where(type => type.Name.EndsWith("Service")))
+                    .AsImplementedInterfaces()
+                    .WithScopedLifetime());
+            services.Scan(scan => scan
+                    .FromAssemblyOf<CustomerRepository>()
+                    .AddClasses(classes => classes.Where(type => type.Name.EndsWith("Repository")))
+                    .AsImplementedInterfaces()
+                    .WithScopedLifetime());
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

@@ -7,5 +7,6 @@ namespace eWireApi.Service
     {
         Task<ResponseBaseModel> CustomerOnboard(CustomerRequest customerRequest);
         Task<CustomerDetails> GetCustomerDetails(CustomerRequest customerRequest);
+        public void TestMethod();
     }
 }

@@ -27,8 +27,9 @@ namespace eWireApi.DAL
         public void StartTransaction()
         {
             _dbConnection = this.Connection;
-            _dbTransaction=_dbConnection.BeginTransaction();
             _dbConnection.Open();
+            _dbTransaction =_dbConnection.BeginTransaction();
+            
         }
 
         public void SaveDataInTransaction<T>(string storeProcedure, T Parameters)
@@ -43,7 +44,7 @@ namespace eWireApi.DAL
         }
         public void CommitTransaction()
         {
-            _dbTransaction?.Rollback();
+            _dbTransaction?.Commit();
             _dbConnection?.Close();
         }
         public void RollbackTransaction()
@@ -53,7 +54,7 @@ namespace eWireApi.DAL
         }
         public void Dispose()
         {
-            CommitTransaction();
+            //CommitTransaction();
         }
         
     }
